@@ -61,6 +61,7 @@ class file extends \controllers\api\api_controller {
 		$history = \service\files::history($this->muser->get_userid());
 		foreach ($history['items'] as $key => $item) {
 			unset($history['items'][$key]['thumbnail']);
+			unset($history['items'][$key]['preview_text']);
 		}
 		foreach ($history['multipaste_items'] as $key => $multipaste_item) {
 			foreach ($multipaste_item['items'] as $inner_key => $item) {
